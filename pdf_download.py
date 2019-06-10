@@ -14,7 +14,7 @@ def pdf_download(url, papername = None):
     else:
         filename = DATA_DIR + papername + ".pdf"
 
-    if os._exists(filename):
+    if os.path.exists(filename):
         print("Downloaded: " + filename)
     else:
         print("Download: " + filename)
