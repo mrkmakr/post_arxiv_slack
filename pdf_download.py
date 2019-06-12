@@ -6,13 +6,14 @@ import time
 def pdf_download(url, papername = None):
 
     DATA_DIR = "data/"
-    os.makedirs(DATA_DIR, exist_ok=True)
+    PDF_DIR = DATA_DIR + "pdf/"
+    os.makedirs(PDF_DIR, exist_ok=True)
 
     url = url.replace("abs", "pdf") + ".pdf"
     if papername is None:
-        filename = DATA_DIR + url.split("/")[-1]
+        filename = PDF_DIR + url.split("/")[-1]
     else:
-        filename = DATA_DIR + papername + ".pdf"
+        filename = PDF_DIR + papername + ".pdf"
 
     if os.path.exists(filename):
         print("Downloaded: " + filename)
